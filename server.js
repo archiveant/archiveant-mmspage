@@ -134,7 +134,7 @@ app.get('/health', (req, res) => {
 });
 
 // Main routes - serve index.html for all page routes
-const pageRoutes = ['/', '/tos', '/privacy'];
+const pageRoutes = ['/', '/contact', '/faq', '/tos', '/privacy'];
 
 pageRoutes.forEach(route => {
     app.get(route, (req, res) => {

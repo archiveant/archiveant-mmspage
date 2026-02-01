@@ -45,8 +45,10 @@ Professional Discord bot hosting and management website with modern design, enha
 ## 📋 Pages
 
 1. **Home** - Hero section with feature cards showcasing services
-2. **Terms of Service** - Comprehensive hosting agreement
-3. **Privacy Policy** - Detailed privacy and data handling information
+2. **Contact Us** - Professional contact form with validation and Discord/email info
+3. **FAQ** - Accordion-style frequently asked questions (10+ common questions)
+4. **Terms of Service** - Comprehensive hosting agreement
+5. **Privacy Policy** - Detailed privacy and data handling information
 
 ## 🛠️ Technology Stack
 
@@ -170,6 +172,42 @@ Update the following sections in `index.html`:
 
 ### Logo
 Replace `logo.jpg` and `logo.png` with your own branding (recommended size: 512x512px)
+
+### Google Analytics
+
+The site includes Google Analytics integration. To enable tracking:
+
+1. Go to [Google Analytics](https://analytics.google.com/)
+2. Create a new property for your website
+3. Get your Measurement ID (looks like `G-XXXXXXXXXX`)
+4. Open `index.html` and replace both instances of `G-XXXXXXXXXX` with your actual ID:
+
+```html
+<!-- Find this in the <head> section -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX'); <!-- Replace this -->
+</script>
+```
+
+**Note:** Analytics will only work once deployed to a public URL (not on localhost).
+
+### Contact Form
+
+The contact form is pre-built but currently shows a success message without actually sending emails. To make it functional, you have two options:
+
+**Option 1: Use a Form Service (Easiest)**
+- [Formspree](https://formspree.io/) - Free tier available
+- [EmailJS](https://www.emailjs.com/) - Free tier available
+- [Web3Forms](https://web3forms.com/) - Completely free
+
+**Option 2: Build Your Own Backend**
+- Add a POST endpoint at `/api/contact` in `server.js`
+- Use Nodemailer or SendGrid to send emails
+- See comments in `script.js` for the API call structure
 
 ## 🔧 Configuration
 
