@@ -19,5 +19,5 @@ app.get('/privacy', (req, res) => {
 });
 
 app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Military Marketplace Services website running on port ${PORT}`);
+    console.log(`Military Essentials website running on port ${PORT}`);
 });

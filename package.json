@@ -1,13 +1,13 @@
 {
-  "name": "military-marketplace-services-website",
+  "name": "military-essentials-website",
   "version": "1.0.0",
-  "description": "Military Marketplace Bot Services website",
+  "description": "Military Essentials Bot Services website",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
   "keywords": ["discord", "bot", "hosting"],
-  "author": "Military Marketplace Services",
+  "author": "Military Essentials",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2"

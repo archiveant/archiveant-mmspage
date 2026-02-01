@@ -1,4 +1,4 @@
-# Military Marketplace Services Website
+# Military Essentials Website
 
 Professional Discord bot hosting and management website.
 
@@ -75,4 +75,4 @@ Professional Discord bot hosting and management website.
 
 ## Logo
 
-Make sure the `fist.png` logo file is in the parent directory (`../fist.png`) or update the path in `index.html`.
+The `logo.jpg` file is included in the website folder and referenced in `index.html`. The logo is automatically styled as a circle using CSS.
