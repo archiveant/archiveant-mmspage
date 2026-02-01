@@ -24,15 +24,6 @@
     <!-- Preload critical assets -->
     <link rel="preload" href="styles.css" as="style">
     <link rel="preload" href="script.js" as="script">
-    
-    <!-- Google Analytics - Replace G-XXXXXXXXXX with your actual tracking ID -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX');
-    </script>
 </head>
 <body>
     <!-- Loading overlay -->
@@ -80,23 +71,23 @@
         </button>
         <nav class="sidebar-nav" role="navigation" aria-label="Secondary navigation">
             <a href="#home" class="sidebar-link" data-section="home">
-                <span class="link-icon" aria-hidden="true">🏠</span>
+                <span class="link-icon" aria-hidden="true"></span>
                 Home
             </a>
-            <a href="#contact" class="sidebar-link" data-section="contact">
-                <span class="link-icon" aria-hidden="true">📧</span>
-                Contact Us
-            </a>
             <a href="#faq" class="sidebar-link" data-section="faq">
-                <span class="link-icon" aria-hidden="true">❓</span>
+                <span class="link-icon" aria-hidden="true"></span>
                 FAQ
             </a>
+            <a href="#contact" class="sidebar-link" data-section="contact">
+                <span class="link-icon" aria-hidden="true"></span>
+                Contact Us
+            </a>
             <a href="#tos" class="sidebar-link" data-section="tos">
-                <span class="link-icon" aria-hidden="true">📋</span>
+                <span class="link-icon" aria-hidden="true"></span>
                 Terms of Service
             </a>
             <a href="#privacy" class="sidebar-link" data-section="privacy">
-                <span class="link-icon" aria-hidden="true">🔒</span>
+                <span class="link-icon" aria-hidden="true"></span>
                 Privacy Policy
             </a>
         </nav>
@@ -113,17 +104,14 @@
                 <p class="fade-in delay-1">Professional Discord bot hosting and management</p>
                 <div class="hero-features fade-in delay-2">
                     <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
                         <h3>High Performance</h3>
                         <p>Lightning-fast infrastructure with 99.9% uptime</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
                         <h3>Secure Hosting</h3>
                         <p>Enterprise-grade security for your bot credentials</p>
                     </div>
                     <div class="feature-card">
-                        <div class="feature-icon">📊</div>
                         <h3>24/7 Monitoring</h3>
                         <p>Continuous uptime and performance tracking</p>
                     </div>
@@ -131,223 +119,216 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="section" aria-labelledby="contact-heading">
-            <div class="contact-container">
-                <div class="contact-header">
-                    <h1 id="contact-heading">Contact Us</h1>
-                    <p>Ready to get your Discord bot hosted? Have questions? We'd love to hear from you!</p>
+        <!-- FAQ Section -->
+        <section id="faq" class="section" aria-labelledby="faq-heading">
+            <div class="policy-container">
+                <h1 id="faq-heading">Frequently Asked Questions</h1>
+                
+                <div class="faq-item">
+                    <h2>What is Military Essentials Bot Services?</h2>
+                    <p>Military Essentials Bot Services (MEBS) is a professional Discord bot hosting platform that provides reliable, secure, and high-performance infrastructure for Discord bots and automation systems.</p>
                 </div>
 
-                <div class="contact-content">
-                    <div class="contact-info">
-                        <h2>Get in Touch</h2>
-                        <p>Fill out the form and we'll get back to you within 24 hours. For urgent matters, reach out on Discord.</p>
-                        
-                        <div class="contact-methods">
-                            <div class="contact-method">
-                                <span class="method-icon">💬</span>
-                                <div>
-                                    <h3>Discord</h3>
-                                    <p>Join our Discord server for instant support</p>
-                                </div>
-                            </div>
-                            <div class="contact-method">
-                                <span class="method-icon">📧</span>
-                                <div>
-                                    <h3>Email</h3>
-                                    <p>support@militaryessentials.com</p>
-                                </div>
-                            </div>
-                            <div class="contact-method">
-                                <span class="method-icon">⚡</span>
-                                <div>
-                                    <h3>Response Time</h3>
-                                    <p>Usually within 24 hours</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="faq-item">
+                    <h2>How do I get started with hosting?</h2>
+                    <p>To get started, contact us through our official Discord server or support channels. Our team will guide you through the setup process, including bot submission, credential configuration, and deployment.</p>
+                </div>
 
-                    <form class="contact-form" id="contactForm" novalidate>
-                        <div class="form-group">
-                            <label for="name">Your Name <span class="required">*</span></label>
-                            <input 
-                                type="text" 
-                                id="name" 
-                                name="name" 
-                                required 
-                                placeholder="John Doe"
-                                aria-required="true">
-                            <span class="error-message" id="nameError"></span>
-                        </div>
+                <div class="faq-item">
+                    <h2>What types of bots can you host?</h2>
+                    <p>We host a wide variety of Discord bots including:</p>
+                    <ul>
+                        <li>Moderation and administration bots</li>
+                        <li>Music and entertainment bots</li>
+                        <li>Utility and productivity bots</li>
+                        <li>Gaming and community bots</li>
+                        <li>Custom automation systems</li>
+                    </ul>
+                    <p>All bots must comply with Discord's Terms of Service and Developer Policies.</p>
+                </div>
 
-                        <div class="form-group">
-                            <label for="email">Email Address <span class="required">*</span></label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                name="email" 
-                                required 
-                                placeholder="john@example.com"
-                                aria-required="true">
-                            <span class="error-message" id="emailError"></span>
-                        </div>
+                <div class="faq-item">
+                    <h2>What is your uptime guarantee?</h2>
+                    <p>We strive for 99.9% uptime with our enterprise-grade infrastructure. While we cannot guarantee 100% uptime due to factors like scheduled maintenance, hardware failures, or third-party outages, we make every effort to minimize downtime and communicate any issues promptly.</p>
+                </div>
 
-                        <div class="form-group">
-                            <label for="discord">Discord Username</label>
-                            <input 
-                                type="text" 
-                                id="discord" 
-                                name="discord" 
-                                placeholder="username#0000">
-                            <span class="error-message" id="discordError"></span>
-                        </div>
+                <div class="faq-item">
+                    <h2>How secure are my bot credentials?</h2>
+                    <p>Security is our top priority. We implement:</p>
+                    <ul>
+                        <li>AES-256 encryption for credential storage</li>
+                        <li>TLS/SSL encrypted transmission</li>
+                        <li>Multi-factor authentication for system access</li>
+                        <li>Restricted personnel access with audit logging</li>
+                        <li>Isolated hosting environments per client</li>
+                        <li>Regular security audits and penetration testing</li>
+                    </ul>
+                </div>
 
-                        <div class="form-group">
-                            <label for="subject">Subject <span class="required">*</span></label>
-                            <select id="subject" name="subject" required aria-required="true">
-                                <option value="">Select a subject...</option>
-                                <option value="hosting">Bot Hosting Inquiry</option>
-                                <option value="pricing">Pricing Question</option>
-                                <option value="support">Technical Support</option>
-                                <option value="partnership">Partnership/Business</option>
-                                <option value="other">Other</option>
-                            </select>
-                            <span class="error-message" id="subjectError"></span>
-                        </div>
+                <div class="faq-item">
+                    <h2>Do you provide technical support?</h2>
+                    <p>Yes, we provide technical support for hosting-related issues including deployment problems, performance optimization, uptime monitoring, and infrastructure concerns. However, we do not provide bot development or coding support.</p>
+                </div>
 
-                        <div class="form-group">
-                            <label for="message">Message <span class="required">*</span></label>
-                            <textarea 
-                                id="message" 
-                                name="message" 
-                                rows="6" 
-                                required 
-                                placeholder="Tell us about your bot hosting needs..."
-                                aria-required="true"></textarea>
-                            <span class="error-message" id="messageError"></span>
-                        </div>
+                <div class="faq-item">
+                    <h2>Can I access my bot's logs and metrics?</h2>
+                    <p>Yes, you have access to your bot's operational logs, error reports, performance metrics, and uptime statistics through our monitoring systems.</p>
+                </div>
 
-                        <button type="submit" class="submit-btn" id="submitBtn">
-                            <span class="btn-text">Send Message</span>
-                            <span class="btn-loader" style="display: none;">Sending...</span>
-                        </button>
+                <div class="faq-item">
+                    <h2>What happens if my bot goes down?</h2>
+                    <p>Our automated monitoring systems detect downtime immediately and trigger automatic restart procedures. If the issue persists, our team is notified and will investigate and resolve the problem as quickly as possible.</p>
+                </div>
 
-                        <div class="form-status" id="formStatus" style="display: none;"></div>
-                    </form>
+                <div class="faq-item">
+                    <h2>How do I terminate my hosting service?</h2>
+                    <p>You can terminate your hosting service at any time by contacting our support team. Upon termination:</p>
+                    <ul>
+                        <li>Your credentials will be securely deleted within 30 days</li>
+                        <li>Hosting data will be retained for 7 days for recovery purposes</li>
+                        <li>You should revoke or regenerate your bot tokens</li>
+                        <li>Final backups can be provided upon request</li>
+                    </ul>
+                </div>
+
+                <div class="faq-item">
+                    <h2>Do you offer database hosting?</h2>
+                    <p>Yes, we can provide database hosting solutions including PostgreSQL, MongoDB, and Redis as part of our hosting services. Contact us to discuss your specific database requirements.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h2>What programming languages do you support?</h2>
+                    <p>We support bots written in any language that can run on our infrastructure, including:</p>
+                    <ul>
+                        <li>Python (discord.py, nextcord, py-cord)</li>
+                        <li>JavaScript/TypeScript (discord.js)</li>
+                        <li>Java (JDA)</li>
+                        <li>C# (.NET)</li>
+                        <li>Go (discordgo)</li>
+                        <li>And many others</li>
+                    </ul>
+                </div>
+
+                <div class="faq-item">
+                    <h2>Is there a limit on bot size or resource usage?</h2>
+                    <p>Resource limits depend on your hosting plan. We offer scalable solutions to accommodate bots of all sizes, from small community bots to large-scale applications serving thousands of servers. Contact us to discuss your specific requirements.</p>
                 </div>
             </div>
         </section>
 
-        <!-- FAQ Section -->
-        <section id="faq" class="section" aria-labelledby="faq-heading">
-            <div class="faq-container">
-                <div class="faq-header">
-                    <h1 id="faq-heading">Frequently Asked Questions</h1>
-                    <p>Got questions? We've got answers. Can't find what you're looking for? <a href="#contact" class="inline-link">Contact us</a>.</p>
+        <!-- Contact Us Section -->
+        <section id="contact" class="section" aria-labelledby="contact-heading">
+            <div class="policy-container">
+                <h1 id="contact-heading">Contact Us</h1>
+                
+                <p class="highlight-text">Get in touch with Military Essentials Bot Services for hosting inquiries, technical support, or general questions.</p>
+
+                <div class="contact-section">
+                    <h2>Support Channels</h2>
+                    <p>We offer multiple ways to reach our team:</p>
+                    
+                    <div class="contact-method">
+                        <h3>Discord Server</h3>
+                        <p>Join our official Discord server for the fastest support response. Our community and support team are available to help with hosting questions, technical issues, and general inquiries.</p>
+                        <p><strong>Recommended for:</strong> Quick questions, community support, real-time assistance</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3>Support Tickets</h3>
+                        <p>Open a support ticket through our Discord server for dedicated one-on-one assistance with technical issues, billing questions, or service requests.</p>
+                        <p><strong>Recommended for:</strong> Technical problems, account issues, service modifications</p>
+                    </div>
+
+                    <div class="contact-method">
+                        <h3>Email Support</h3>
+                        <p>For formal inquiries, business proposals, or matters requiring documentation, you can reach us via email through our official support channels.</p>
+                        <p><strong>Recommended for:</strong> Business inquiries, formal requests, documentation needs</p>
+                    </div>
                 </div>
 
-                <div class="faq-list">
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>How do I get started with bot hosting?</span>
-                            <span class="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Getting started is easy! Simply contact us through the form above with details about your bot (programming language, features, expected usage). We'll set up a hosting plan tailored to your needs and have your bot running within 24 hours.</p>
-                        </div>
-                    </div>
+                <div class="contact-section">
+                    <h2>Before You Contact Us</h2>
+                    <p>To help us assist you more efficiently, please have the following information ready:</p>
+                    <ul>
+                        <li>Your Discord username and user ID</li>
+                        <li>Bot name and application ID (if applicable)</li>
+                        <li>Detailed description of your issue or inquiry</li>
+                        <li>Any relevant error messages or logs</li>
+                        <li>Steps you've already taken to troubleshoot</li>
+                    </ul>
+                </div>
 
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>What's your uptime guarantee?</span>
-                            <span class="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>We maintain 99.9% uptime across our infrastructure. Our servers are monitored 24/7, and we have automatic restart systems in place. In the rare event of downtime, we'll notify you immediately and work to restore service as quickly as possible.</p>
-                        </div>
-                    </div>
+                <div class="contact-section">
+                    <h2>Response Times</h2>
+                    <p>We strive to respond to all inquiries as quickly as possible:</p>
+                    <ul>
+                        <li><strong>Critical Issues:</strong> Within 1-2 hours (24/7 monitoring)</li>
+                        <li><strong>Technical Support:</strong> Within 4-8 hours</li>
+                        <li><strong>General Inquiries:</strong> Within 24 hours</li>
+                        <li><strong>Business Inquiries:</strong> Within 48 hours</li>
+                    </ul>
+                    <p class="note">Response times may vary during peak periods or holidays. Critical infrastructure issues are prioritized.</p>
+                </div>
 
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>What programming languages do you support?</span>
-                            <span class="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>We support all major Discord bot frameworks including JavaScript/TypeScript (Discord.js, Eris), Python (discord.py, Pycord), Java (JDA), and more. If you're using a different language or framework, contact us to discuss compatibility.</p>
+                <div class="contact-section">
+                    <h2>What We Can Help With</h2>
+                    <div class="help-categories">
+                        <div class="help-category">
+                            <h3>Hosting Services</h3>
+                            <ul>
+                                <li>New bot hosting setup</li>
+                                <li>Service upgrades or downgrades</li>
+                                <li>Resource allocation adjustments</li>
+                                <li>Database hosting configuration</li>
+                            </ul>
                         </div>
-                    </div>
 
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>How much does hosting cost?</span>
-                            <span class="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Pricing varies based on your bot's resource requirements (RAM, CPU, storage) and features. We offer flexible plans starting from basic hosting to enterprise solutions. Contact us for a custom quote based on your specific needs.</p>
+                        <div class="help-category">
+                            <h3>Technical Support</h3>
+                            <ul>
+                                <li>Bot deployment issues</li>
+                                <li>Performance optimization</li>
+                                <li>Uptime and monitoring concerns</li>
+                                <li>Infrastructure troubleshooting</li>
+                            </ul>
                         </div>
-                    </div>
 
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>Can I access my bot's code and files?</span>
-                            <span class="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Absolutely! You maintain full ownership of your code and files. We can provide access to your hosting environment, and you're free to update your bot's code anytime. We also offer automatic deployment from GitHub if you prefer.</p>
+                        <div class="help-category">
+                            <h3>Account Management</h3>
+                            <ul>
+                                <li>Credential updates</li>
+                                <li>Service termination requests</li>
+                                <li>Data export and backups</li>
+                                <li>Security concerns</li>
+                            </ul>
                         </div>
-                    </div>
 
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>Do you provide database hosting?</span>
-                            <span class="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Yes! We support various database solutions including MongoDB, PostgreSQL, MySQL, and SQLite. Database hosting can be included in your plan or added separately based on your storage and performance needs.</p>
+                        <div class="help-category">
+                            <h3>General Inquiries</h3>
+                            <ul>
+                                <li>Pricing and plans</li>
+                                <li>Service capabilities</li>
+                                <li>Partnership opportunities</li>
+                                <li>Terms and policies clarification</li>
+                            </ul>
                         </div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>What if my bot goes down?</span>
-                            <span class="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>We have automatic restart systems that detect crashes and restart your bot immediately. Our monitoring alerts us to any issues, and we'll investigate and fix problems promptly. You'll receive notifications about any significant downtime.</p>
-                        </div>
-                    </div>
+                <div class="contact-section">
+                    <h2>What We Cannot Help With</h2>
+                    <p>Please note that our support team focuses on hosting infrastructure. We cannot provide:</p>
+                    <ul>
+                        <li>Bot development or coding assistance</li>
+                        <li>Discord API or library support</li>
+                        <li>Custom feature implementation</li>
+                        <li>Third-party service integration help</li>
+                    </ul>
+                    <p>For development assistance, please consult Discord's developer documentation or community resources.</p>
+                </div>
 
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>Can I upgrade or downgrade my plan?</span>
-                            <span class="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Yes! You can upgrade or downgrade your hosting plan at any time. As your bot grows, we can scale resources accordingly. Contact us to discuss plan changes and we'll make the transition seamless with zero downtime.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>How secure is my bot token and data?</span>
-                            <span class="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Security is our top priority. All credentials are encrypted and stored securely with restricted access. We use industry-standard security practices, regular audits, and isolated hosting environments. Your data is never shared or exposed publicly.</p>
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <button class="faq-question" aria-expanded="false">
-                            <span>Do you offer technical support?</span>
-                            <span class="faq-icon" aria-hidden="true">+</span>
-                        </button>
-                        <div class="faq-answer">
-                            <p>Yes! We provide technical support for all hosting-related issues including deployment, configuration, performance optimization, and troubleshooting. While we don't write code for you, we can help diagnose and resolve infrastructure problems.</p>
-                        </div>
-                    </div>
+                <div class="policy-footer">
+                    <p><strong>We look forward to hearing from you and helping with your Discord bot hosting needs!</strong></p>
                 </div>
             </div>
         </section>
@@ -636,10 +617,6 @@
             <p class="footer-brand">&copy; 2026 Military Essentials&trade;. All rights reserved.</p>
             <p class="footer-credit">This website and its contents are operated under the administration of Military Essentials&trade;.<br>Development and technical implementation by ArchiveAnt.</p>
             <div class="footer-links">
-                <a href="#contact" class="footer-link">Contact</a>
-                <span class="footer-separator">•</span>
-                <a href="#faq" class="footer-link">FAQ</a>
-                <span class="footer-separator">•</span>
                 <a href="#tos" class="footer-link">Terms</a>
                 <span class="footer-separator">•</span>
                 <a href="#privacy" class="footer-link">Privacy</a>

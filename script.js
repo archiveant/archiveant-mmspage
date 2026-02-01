@@ -245,8 +245,8 @@
     function getSectionName(sectionId) {
         const names = {
             'home': 'Home',
+            'faq': 'FAQ',
             'contact': 'Contact Us',
-            'faq': 'Frequently Asked Questions',
             'tos': 'Terms of Service',
             'privacy': 'Privacy Policy'
         };
@@ -260,8 +260,8 @@
         const baseTitle = 'Military Essentials - Discord Bot Hosting';
         const sectionNames = {
             'home': baseTitle,
-            'contact': 'Contact Us - Military Essentials',
             'faq': 'FAQ - Military Essentials',
+            'contact': 'Contact Us - Military Essentials',
             'tos': 'Terms of Service - Military Essentials',
             'privacy': 'Privacy Policy - Military Essentials'
         };
@@ -386,220 +386,6 @@
     }
     
     // ==========================================
-    // FAQ ACCORDION FUNCTIONALITY
-    // ==========================================
-    
-    /**
-     * Initialize FAQ accordion
-     */
-    function initFAQ() {
-        const faqQuestions = document.querySelectorAll('.faq-question');
-        
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', function() {
-                const isExpanded = this.getAttribute('aria-expanded') === 'true';
-                
-                // Close all other FAQs
-                faqQuestions.forEach(q => {
-                    q.setAttribute('aria-expanded', 'false');
-                });
-                
-                // Toggle current FAQ
-                this.setAttribute('aria-expanded', !isExpanded);
-                
-                // Announce to screen readers
-                const questionText = this.querySelector('span').textContent;
-                announceToScreenReader(
-                    isExpanded ? `Collapsed: ${questionText}` : `Expanded: ${questionText}`
-                );
-            });
-        });
-    }
-    
-    // ==========================================
-    // CONTACT FORM FUNCTIONALITY
-    // ==========================================
-    
-    /**
-     * Validate email format
-     */
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-    
-    /**
-     * Validate form field
-     */
-    function validateField(fieldId, fieldName, validationType = 'required') {
-        const field = document.getElementById(fieldId);
-        const errorElement = document.getElementById(`${fieldId}Error`);
-        
-        if (!field) return true;
-        
-        const value = field.value.trim();
-        
-        // Required field validation
-        if (validationType === 'required' && !value) {
-            errorElement.textContent = `${fieldName} is required`;
-            field.setAttribute('aria-invalid', 'true');
-            return false;
-        }
-        
-        // Email validation
-        if (validationType === 'email' && value && !isValidEmail(value)) {
-            errorElement.textContent = 'Please enter a valid email address';
-            field.setAttribute('aria-invalid', 'true');
-            return false;
-        }
-        
-        // Clear error if valid
-        errorElement.textContent = '';
-        field.setAttribute('aria-invalid', 'false');
-        return true;
-    }
-    
-    /**
-     * Validate entire form
-     */
-    function validateForm() {
-        let isValid = true;
-        
-        isValid = validateField('name', 'Name') && isValid;
-        isValid = validateField('email', 'Email', 'email') && isValid;
-        isValid = validateField('subject', 'Subject') && isValid;
-        isValid = validateField('message', 'Message') && isValid;
-        
-        return isValid;
-    }
-    
-    /**
-     * Show form status message
-     */
-    function showFormStatus(message, type) {
-        const statusElement = document.getElementById('formStatus');
-        if (!statusElement) return;
-        
-        statusElement.textContent = message;
-        statusElement.className = `form-status ${type}`;
-        statusElement.style.display = 'block';
-        
-        // Announce to screen readers
-        announceToScreenReader(message);
-        
-        // Auto-hide after 5 seconds for success messages
-        if (type === 'success') {
-            setTimeout(() => {
-                statusElement.style.display = 'none';
-            }, 5000);
-        }
-    }
-    
-    /**
-     * Handle form submission
-     */
-    async function handleFormSubmit(e) {
-        e.preventDefault();
-        
-        // Validate form
-        if (!validateForm()) {
-            showFormStatus('Please fix the errors above', 'error');
-            return;
-        }
-        
-        const submitBtn = document.getElementById('submitBtn');
-        const formData = new FormData(e.target);
-        
-        // Disable submit button and show loading
-        submitBtn.disabled = true;
-        submitBtn.classList.add('loading');
-        
-        try {
-            // In a real implementation, you would send this to your backend
-            // For now, we'll simulate a successful submission
-            
-            // Simulate API call delay
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            
-            // For demonstration - in production, replace with actual API call:
-            /*
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    name: formData.get('name'),
-                    email: formData.get('email'),
-                    discord: formData.get('discord'),
-                    subject: formData.get('subject'),
-                    message: formData.get('message')
-                })
-            });
-            
-            if (!response.ok) {
-                throw new Error('Failed to send message');
-            }
-            */
-            
-            // Show success message
-            showFormStatus('✓ Message sent successfully! We\'ll get back to you soon.', 'success');
-            
-            // Reset form
-            e.target.reset();
-            
-            // Track form submission in analytics
-            if (typeof gtag === 'function') {
-                gtag('event', 'form_submit', {
-                    'event_category': 'Contact',
-                    'event_label': formData.get('subject')
-                });
-            }
-            
-        } catch (error) {
-            console.error('Form submission error:', error);
-            showFormStatus('✗ Failed to send message. Please try again or contact us directly.', 'error');
-        } finally {
-            // Re-enable submit button
-            submitBtn.disabled = false;
-            submitBtn.classList.remove('loading');
-        }
-    }
-    
-    /**
-     * Initialize contact form
-     */
-    function initContactForm() {
-        const contactForm = document.getElementById('contactForm');
-        if (!contactForm) return;
-        
-        // Form submission
-        contactForm.addEventListener('submit', handleFormSubmit);
-        
-        // Real-time validation on blur
-        const fields = ['name', 'email', 'subject', 'message'];
-        fields.forEach(fieldId => {
-            const field = document.getElementById(fieldId);
-            if (field) {
-                field.addEventListener('blur', () => {
-                    const fieldName = field.labels?.[0]?.textContent.replace(' *', '') || fieldId;
-                    const validationType = fieldId === 'email' ? 'email' : 'required';
-                    validateField(fieldId, fieldName, validationType);
-                });
-                
-                // Clear error on input
-                field.addEventListener('input', () => {
-                    const errorElement = document.getElementById(`${fieldId}Error`);
-                    if (errorElement && errorElement.textContent) {
-                        errorElement.textContent = '';
-                        field.setAttribute('aria-invalid', 'false');
-                    }
-                });
-            }
-        });
-    }
-    
-    // ==========================================
     // PAGE INITIALIZATION
     // ==========================================
     
@@ -632,12 +418,6 @@
         
         // Initialize event listeners
         initEventListeners();
-        
-        // Initialize FAQ accordion
-        initFAQ();
-        
-        // Initialize contact form
-        initContactForm();
         
         // Add loaded class to body for CSS hooks
         document.body.classList.add('page-loaded');
